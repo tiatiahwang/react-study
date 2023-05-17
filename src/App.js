@@ -1,5 +1,7 @@
+import Calculator from './day3/Calculator';
+
 function App() {
-  return null;
+  return <Calculator />;
 }
 
 export default App;

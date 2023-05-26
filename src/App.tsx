@@ -1,9 +1,9 @@
 import './index.css';
-import CallSingnatures from './day9/CallSignatures';
+import Dictionary from './assignment10/Dictionary';
 
 function App() {
   return (
-    <CallSingnatures />
+    <Dictionary />
     // <Routes>
     //   <Route path='/' element={<Home />} />
     //   <Route path='/character/:id' element={<Detail />} />

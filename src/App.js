@@ -1,5 +1,4 @@
 import './index.css';
-import Dictionary from './assignment10/Dictionary';
 
 function App() {
   return (

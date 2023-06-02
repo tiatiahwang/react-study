@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
-import About from './assignment14/pages/About';
-import Author from './assignment14/pages/Author';
-import Book from './assignment14/pages/Book';
-import Home from './assignment14/pages/Home';
-import Root from './assignment14/pages/Root';
-import BookDetail from './assignment14/pages/BookDetail';
+import About from './pages/About';
+import Author from './pages/Author';
+import Book from './pages/Book';
+import Home from './pages/Home';
+import Root from './pages/Root';
+import BookDetail from './pages/BookDetail';
 
 const router = createBrowserRouter([
   {

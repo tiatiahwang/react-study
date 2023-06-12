@@ -25,12 +25,18 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
+const Contents = styled.div`
+  padding-top: 120px;
+`;
+
 const Home = () => {
   return (
     <Wrapper>
       <GlobalStyles />
       <Nav />
-      <Outlet />
+      <Contents>
+        <Outlet />
+      </Contents>
     </Wrapper>
   );
 };

@@ -1,9 +1,9 @@
-import './index.css';
-import Nations from './assignment16/components/Nations';
+// import './index.css';
+import Movies from './assignment18/Movies';
 
 function App() {
   return (
-    <Nations />
+    <Movies />
     // <div>
     //   <Outlet />
     // </div>

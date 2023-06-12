@@ -4,31 +4,8 @@ import {
   getPopular,
   makeImagePath,
 } from './api';
-import styled, {
-  createGlobalStyle,
-} from 'styled-components';
+import styled from 'styled-components';
 import Nav from './components/Nav';
-
-const GlobalStyles = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    background-color:#090709;
-    color: white;
-  }
-  a {
-    text-decoration:none;
-    color: inherit;
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
 
 const Container = styled.div`
   display: grid;
@@ -61,26 +38,22 @@ const Movies = () => {
     ['popular'],
     getPopular,
   );
-  console.log(data);
+
   return (
-    <Wrapper>
-      <GlobalStyles />
+    <Container>
       {isLoading ? <div>Loading...</div> : null}
-      <Nav />
-      <Container>
-        {data?.results?.map((movie) => (
-          <div key={movie.id}>
-            <Image>
-              <img
-                src={makeImagePath(movie.poster_path)}
-                alt={movie.title}
-              />
-            </Image>
-            <Title>{movie.title}</Title>
-          </div>
-        ))}
-      </Container>
-    </Wrapper>
+      {data?.results?.map((movie) => (
+        <div key={movie.id}>
+          <Image>
+            <img
+              src={makeImagePath(movie.poster_path)}
+              alt={movie.title}
+            />
+          </Image>
+          <Title>{movie.title}</Title>
+        </div>
+      ))}
+    </Container>
   );
 };
 

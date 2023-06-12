@@ -10,9 +10,6 @@ import styled, {
 import Nav from './components/Nav';
 
 const GlobalStyles = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
   body {
     background-color:#090709;
     color: white;
@@ -56,7 +53,7 @@ const Title = styled.div`
   font-weight: 700;
 `;
 
-const Movies = () => {
+const ComingSoon = () => {
   const { isLoading, data } = useQuery<IAPIResponse>(
     ['popular'],
     getPopular,
@@ -84,4 +81,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default ComingSoon;

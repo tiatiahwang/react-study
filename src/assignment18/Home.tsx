@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 70vw;
 `;
 
 const Contents = styled.div`

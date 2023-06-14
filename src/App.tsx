@@ -1,5 +1,5 @@
 // import './index.css';
-import Movies from './assignment18/Movies';
+import Movies from './assignment18/Popular';
 
 function App() {
   return (

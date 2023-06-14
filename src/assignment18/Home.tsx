@@ -1,7 +1,7 @@
 import styled, {
   createGlobalStyle,
 } from 'styled-components';
-import Nav from './components/Nav';
+import Header from './components/Header';
 import { Outlet } from 'react-router-dom';
 
 const GlobalStyles = createGlobalStyle`
@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <Wrapper>
       <GlobalStyles />
-      <Nav />
+      <Header />
       <Contents>
         <Outlet />
       </Contents>

@@ -5,6 +5,12 @@ import {
   makeImagePath,
 } from './api';
 import styled from 'styled-components';
+import {
+  PathMatch,
+  useMatch,
+  useNavigate,
+} from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Container = styled.div`
   display: grid;
@@ -12,6 +18,9 @@ const Container = styled.div`
   grid-gap: 50px;
   place-items: center;
   text-align: center;
+  div {
+    cursor: pointer;
+  }
 `;
 
 const Image = styled.div`
@@ -33,16 +42,26 @@ const Title = styled.div`
 `;
 
 const Movies = () => {
+  const navigate = useNavigate();
+  const movieDetailMatch: PathMatch<string> | null =
+    useMatch('/movies/:id');
+
   const { isLoading, data } = useQuery<IAPIResponse>(
     ['popular'],
     getPopular,
   );
+  const onMovieClick = (movieId: number) => {
+    navigate(`/movies/${movieId}`);
+  };
 
   return (
     <Container>
       {isLoading ? <div>Loading...</div> : null}
       {data?.results?.map((movie) => (
-        <div key={movie.id}>
+        <div
+          key={movie.id}
+          onClick={() => onMovieClick(movie.id)}
+        >
           <Image>
             <img
               src={makeImagePath(movie.poster_path)}
@@ -52,6 +71,23 @@ const Movies = () => {
           <Title>{movie.title}</Title>
         </div>
       ))}
+      <AnimatePresence>
+        {movieDetailMatch ? (
+          <motion.div
+            layoutId={movieDetailMatch.params.id}
+            style={{
+              position: 'absolute',
+              width: '40vw',
+              height: '80vh',
+              backgroundColor: 'red',
+              top: 110,
+              left: 0,
+              right: 0,
+              margin: '0 auto',
+            }}
+          />
+        ) : null}
+      </AnimatePresence>
     </Container>
   );
 };

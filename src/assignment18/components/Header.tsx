@@ -4,7 +4,7 @@ import {
   PathMatch,
   useMatch,
 } from 'react-router-dom';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 const Nav = styled.nav`
   display: flex;
@@ -12,9 +12,10 @@ const Nav = styled.nav`
   align-items: center;
   padding: 40px 0;
   width: 100%;
+  background: black;
   position: fixed;
   top: 0;
-  background: black;
+  z-index: 1;
 `;
 
 const Items = styled.ul`
